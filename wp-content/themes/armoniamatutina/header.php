@@ -8,6 +8,8 @@
 </head>
 
 <body>
+
+<header>
     <h1>Desde header</h1>
 
     <?php
@@ -18,3 +20,5 @@
     );
     wp_nav_menu($args);
     ?>
+
+</header>
