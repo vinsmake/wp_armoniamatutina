@@ -29,6 +29,7 @@ function armoniamatutina_menus() {
 
 add_action('init', 'armoniamatutina_menus');
 
+<<<<<<< HEAD
 /* css variable */
 function armoniamatutina_hero()
 {
@@ -52,4 +53,6 @@ function armoniamatutina_hero()
 }
 add_action('init', 'armoniamatutina_hero');
 
+=======
+>>>>>>> origin/main
 ?>
