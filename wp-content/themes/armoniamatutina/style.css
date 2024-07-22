@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'FontPrimary';
-    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+    src: url('./fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -143,20 +143,25 @@
   You can use this box to comment your
   color palette:
   
-  pink: hsl(288, 99%, 65%);
-  blue: hsl(180, 100%, 46%) ;
-  yellow: hsl(58, 87%, 53%);
-  green: hsl(103, 100%, 50%);
+  --gris-claro: #F1F1F1; => bnackground
 \*-----------------------------------*/
 
 :root {
-    --c-background: #ffffff;
-    --c-text: #010C19;
+    --c-background: #F1F1F1;
+    --c-background-neg: #262626;
+
+    --c-text: #000000;
+    --c-text-neg: #ffffff;
 
     --c-action: #ff00ff;
     --c-accent: #4AFD01;
     --c-detail: #ffff00;
     --c-effect: #00ffff;
+
+    --gris: #D9DAD5;
+
+    
+
 }
 
 /*-----------------------------------*\
@@ -169,9 +174,10 @@ html {
 }
 
 body {
-    background-color: var(--c-background);
+    background: var(--c-background);
     color: var(--c-text);
-    font-family: var(--ff-1n);
+    font-family: var(--ff-1);
+    font-weight: var(--fw-n);
     font-size: var(--fs-text);
     overflow-x: hidden;
 }
@@ -183,3 +189,47 @@ body {
   need it. DON'T forget to change
   your mediaqueries if necesary
 \*-----------------------------------*/
+
+/* BODY */
+.body {
+    background: linear-gradient(to bottom, var(--gris) 0%, var(--c-background) 7rem);
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 100vh;
+}
+
+/* HEADER */
+/* header title */
+.header__title {
+    font-size: var(--fs-6);
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+/* header navbar */
+.header__navbar ul {
+    background: var(--c-background-neg);
+    color: var(--c-text-neg);
+    display: flex;
+    justify-content: center;
+}
+
+.header__navbar li {
+    padding: 0rem 4rem;
+    font-size: var(--fs-1);
+    text-transform: lowercase;
+}
+
+.header__navbar li:hover {
+    background-color: rgba(217 218 213 /20%);
+    border-radius: 2rem;
+    transition: background-color 0.7s;
+}
+
+.header__navbar .current_page_item {
+    background-color: rgba(217 218 213 /20%);
+    border-radius: 2rem;
+}
+
+
+
