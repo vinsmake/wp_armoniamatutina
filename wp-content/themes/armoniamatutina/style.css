@@ -212,20 +212,17 @@ body {
     color: var(--c-text-neg);
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
     box-shadow: 0px -5px 10px -5px rgba(0, 0, 0, 0.75);
-=======
->>>>>>> origin/main
+
 }
 
 .header__navbar li {
     padding: 0rem 4rem;
     font-size: var(--fs-1);
     text-transform: lowercase;
-<<<<<<< HEAD
     text-shadow: 0px 0px 3px rgb(0 0 0 / 0.8)
-=======
->>>>>>> origin/main
+
+
 }
 
 .header__navbar li:hover {
@@ -239,7 +236,6 @@ body {
     border-radius: 2rem;
 }
 
-<<<<<<< HEAD
 /* header portada */
 .header__hero {
     background-repeat: no-repeat;
@@ -268,7 +264,3 @@ body {
     font-size: var(--fs-2);
     font-weight: var(--fw-b);
 }
-=======
-
-
->>>>>>> origin/main
