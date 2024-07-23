@@ -2,7 +2,9 @@
 <?php
 $leyenda = get_option('custom_leyenda');
 $titulo = get_option('custom_titulo');
+/* SOCIALS */
 $facebook = get_option('custom_facebook');
+$instagram = get_option('custom_instagram');
 ?>
 
 
@@ -46,17 +48,47 @@ $facebook = get_option('custom_facebook');
                     ?>
 
                 </h2>
+                <!-- Social media -->
+                 <div>
                 <?php
-                    if ($facebook) {
-                        if ($facebook['mostrar_facebook']) {
-                            echo esc_url($facebook['link_de_facebook']);
+                /* Facebook */
+                if ($facebook) {
+                    if ($facebook['mostrar']) {
+                        $link = esc_url($facebook['link']);
+                        $svg_path = get_template_directory() . '/svg/facebook.svg';
+
+                        if (file_exists($svg_path)) {
+                            $svg = file_get_contents($svg_path);
+                            echo '<a href="' . $link . '">' . $svg . '</a>';
                         } else {
                             echo '';
                         }
                     } else {
                         echo '';
                     }
-                    ?>
+                } else {
+                    echo '';
+                }
+                /* Instagram */
+                if ($instagram) {
+                    if ($instagram['mostrar']) {
+                        $link = esc_url($instagram['link']);
+                        $svg_path = get_template_directory() . '/svg/instagram.svg';
+
+                        if (file_exists($svg_path)) {
+                            $svg = file_get_contents($svg_path);
+                            echo '<a href="' . $link . '">' . $svg . '</a>';
+                        } else {
+                            echo '';
+                        }
+                    } else {
+                        echo '';
+                    }
+                } else {
+                    echo '';
+                }
+                ?>
+                </div>
             </div>
         </section>
     </header>
