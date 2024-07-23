@@ -256,6 +256,26 @@ body {
     justify-content: center;
 }
 
+.header__hero__contenido__boton a {
+    background-color: rgba(63 58 55 / 50%);
+    color: var(--c-text-neg);
+    padding: 1rem 3rem;
+    font-size: var(--fs-1);
+    font-weight: bold;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 4rem;
+    width: auto;
+    display: inline-block;
+}
+
+.header__hero__contenido__boton a:hover {
+    cursor: pointer;
+    background-color: rgba(63, 58, 55, 0.6);
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
 .header__hero__contenido h2 {
     text-shadow: 0px 0px 6px rgb(0 0 0 / 0.8),
                 0px 0px 6px rgb(0 0 0 / 0.8);

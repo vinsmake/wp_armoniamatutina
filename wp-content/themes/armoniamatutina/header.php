@@ -3,6 +3,7 @@
 /* HERO DATA */
 $leyenda = get_option('custom_leyenda');
 $titulo = get_option('custom_titulo');
+$boton = get_option('custom_boton');
 /* SOCIALS */
 $discord = get_option('custom_discord');
 $facebook = get_option('custom_facebook');
@@ -57,6 +58,26 @@ $youtube = get_option('custom_youtube');
                     ?>
 
                 </h2>
+                <!-- Boton externo -->
+                <div class="header__hero__contenido__boton">
+                    <?php
+
+                    if ($boton) {
+                        if ($boton['mostrar']) {
+                            $link = esc_url($boton['link']);
+                            $texto = ($boton['texto']);
+
+                            echo '<a href="' . $link . '" target="_blank">' . $texto . '</a>';
+                        } else {
+                            echo '';
+                        }
+                    } else {
+                        echo '';
+                    }
+
+
+                    ?>
+                </div>
                 <!-- Social media -->
                 <div class="header__hero__contenido__social">
                     <?php

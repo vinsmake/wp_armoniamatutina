@@ -65,6 +65,12 @@ function armoniamatutina_header()
     /* Inyecta css */
     wp_add_inline_style('custom', $imagen_header_css);
 
+    /* BOTON EXTERNO */
+    $boton = get_field('boton', $front_id);
+    if ($boton) {
+        update_option('custom_boton', $boton);
+    }
+
     /* SOCIAL MEDIA LINKS AND ICONS */
     /* Obtiene el campo */
     $discord = get_field('discord', $front_id);
