@@ -34,6 +34,14 @@ endwhile;
 
 ?>
 
+<?php 
+
+/* echo "<pre>";
+var_dump($facebook);
+echo "</pre>"; */
+
+
+?>
 
 <?php
 get_footer();

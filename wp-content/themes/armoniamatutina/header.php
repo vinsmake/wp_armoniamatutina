@@ -44,16 +44,19 @@ $facebook = get_option('custom_facebook');
                         echo esc_html($leyenda);
                     };
                     ?>
-                    <?php
-                    if ($facebook) { // Verifica si $facebook no está vacío
-                        echo esc_html($facebook);
-                    } else {
-                        echo "no data";
-                    };
 
-
-                    ?>
                 </h2>
+                <?php
+                    if ($facebook) {
+                        if ($facebook['mostrar_facebook']) {
+                            echo esc_url($facebook['link_de_facebook']);
+                        } else {
+                            echo '';
+                        }
+                    } else {
+                        echo '';
+                    }
+                    ?>
             </div>
         </section>
     </header>
