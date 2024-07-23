@@ -1,5 +1,6 @@
 <!-- ADVANCED CUSTOM FIELDS IMPORT GLOBAL DATA -->
 <?php
+/* HERO DATA */
 $leyenda = get_option('custom_leyenda');
 $titulo = get_option('custom_titulo');
 /* SOCIALS */
@@ -59,177 +60,48 @@ $youtube = get_option('custom_youtube');
                 <!-- Social media -->
                 <div class="header__hero__contenido__social">
                     <?php
-                    /* Discord */
-                    if ($discord) {
-                        if ($discord['mostrar']) {
-                            $link = esc_url($discord['link']);
-                            $svg_path = get_template_directory() . '/svg/discord.svg';
+                    /* Social media */
+                    function display_social_link($social, $svg_filename)
+                    {
+                        if ($social && $social['mostrar']) {
+                            $link = esc_url($social['link']);
+                            $svg_path = get_template_directory() . '/svg/' . $svg_filename;
 
                             if (file_exists($svg_path)) {
                                 $svg = file_get_contents($svg_path);
                                 echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
                             }
-                        } else {
-                            echo '';
                         }
-                    } else {
-                        echo '';
-                    }
-                    /* Facebook */
-                    if ($facebook) {
-                        if ($facebook['mostrar']) {
-                            $link = esc_url($facebook['link']);
-                            $svg_path = get_template_directory() . '/svg/facebook.svg';
-
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
-                            }
-                        } else {
-                            echo '';
-                        }
-                    } else {
-                        echo '';
-                    }
-                    /* Instagram */
-                    if ($instagram) {
-                        if ($instagram['mostrar']) {
-                            $link = esc_url($instagram['link']);
-                            $svg_path = get_template_directory() . '/svg/instagram.svg';
-
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
-                            }
-                        } else {
-                            echo '';
-                        }
-                    } else {
-                        echo '';
                     }
 
-                    /* LinkedIn */
-                    if ($linkedin) {
-                        if ($linkedin['mostrar']) {
-                            $link = esc_url($linkedin['link']);
-                            $svg_path = get_template_directory() . '/svg/linkedin.svg';
+                    // Discord
+                    display_social_link($discord, 'discord.svg');
 
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
-                            }
-                        } else {
-                            echo '';
-                        }
-                    } else {
-                        echo '';
-                    }
+                    // Facebook
+                    display_social_link($facebook, 'facebook.svg');
 
-                    /* Telegram */
-                    if ($telegram) {
-                        if ($telegram['mostrar']) {
-                            $link = esc_url($telegram['link']);
-                            $svg_path = get_template_directory() . '/svg/telegram.svg';
+                    // Instagram
+                    display_social_link($instagram, 'instagram.svg');
 
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
-                            }
-                        } else {
-                            echo '';
-                        }
-                    } else {
-                        echo '';
-                    }
+                    // LinkedIn
+                    display_social_link($linkedin, 'linkedin.svg');
 
-                    /* TikTok */
-                    if ($tiktok) {
-                        if ($tiktok['mostrar']) {
-                            $link = esc_url($tiktok['link']);
-                            $svg_path = get_template_directory() . '/svg/tiktok.svg';
+                    // Telegram
+                    display_social_link($telegram, 'telegram.svg');
 
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
-                            }
-                        } else {
-                            echo '';
-                        }
-                    } else {
-                        echo '';
-                    }
+                    // TikTok
+                    display_social_link($tiktok, 'tiktok.svg');
 
-                    /* WhatsApp */
-                    if ($whatsapp) {
-                        if ($whatsapp['mostrar']) {
-                            $link = esc_url($whatsapp['link']);
-                            $svg_path = get_template_directory() . '/svg/whatsapp.svg';
+                    // WhatsApp
+                    display_social_link($whatsapp, 'whatsapp.svg');
 
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
-                            }
-                        } else {
-                            echo '';
-                        }
-                    } else {
-                        echo '';
-                    }
+                    // X
+                    display_social_link($x, 'x.svg');
 
-                    /* X */
-                    if ($x) {
-                        if ($x['mostrar']) {
-                            $link = esc_url($x['link']);
-                            $svg_path = get_template_directory() . '/svg/x.svg';
-
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
-                            }
-                        } else {
-                            echo '';
-                        }
-                    } else {
-                        echo '';
-                    }
-
-                    /* YouTube */
-                    if ($youtube) {
-                        if ($youtube['mostrar']) {
-                            $link = esc_url($youtube['link']);
-                            $svg_path = get_template_directory() . '/svg/youtube.svg';
-
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            } else {
-                                echo '';
-                            }
-                        } else {
-                            echo '';
-                        }
-                    } else {
-                        echo '';
-                    }
-
-
+                    // YouTube
+                    display_social_link($youtube, 'youtube.svg');
                     ?>
+
                 </div>
             </div>
         </section>
