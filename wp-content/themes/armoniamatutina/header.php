@@ -1,9 +1,8 @@
 <!-- ADVANCED CUSTOM FIELDS IMPORT GLOBAL DATA -->
 <?php
 $leyenda = get_option('custom_leyenda');
-?>
-<?php
 $titulo = get_option('custom_titulo');
+$facebook = get_option('custom_facebook');
 ?>
 
 
@@ -44,6 +43,15 @@ $titulo = get_option('custom_titulo');
                     if ($leyenda) {
                         echo esc_html($leyenda);
                     };
+                    ?>
+                    <?php
+                    if ($facebook) { // Verifica si $facebook no está vacío
+                        echo esc_html($facebook);
+                    } else {
+                        echo "no data";
+                    };
+
+
                     ?>
                 </h2>
             </div>

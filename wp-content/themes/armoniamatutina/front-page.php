@@ -5,11 +5,15 @@ $leyenda = get_field('leyenda');
 if ($leyenda) {
     update_option('custom_leyenda', $leyenda);
 }
-?>
-<?php
+
 $titulo = get_field('titulo');
 if ($titulo) {
     update_option('custom_titulo', $titulo);
+}
+
+$facebook = get_field('facebook');
+if ($facebook) {
+    update_option('custom_facebook', $facebook);
 }
 ?>
 
