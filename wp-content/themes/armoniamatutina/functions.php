@@ -5,6 +5,9 @@ function armoniamatutina_setup()
 {
     //Titulos para SEO
     add_theme_support('title-tag');
+
+    //Imagenes destacadas
+    add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'armoniamatutina_setup');
 
@@ -120,3 +123,12 @@ function armoniamatutina_header()
     }
 }
 add_action('init', 'armoniamatutina_header');
+
+
+/* POST */
+
+function armoniamatutina_default_content($content) {
+    $default_content = '<div class="post__content">Aquí puedes poner el contenido por defecto que quieras.</div>';
+    return $default_content . $content;
+}
+add_filter('default_content', 'armoniamatutina_default_content');
