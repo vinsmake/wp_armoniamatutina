@@ -126,10 +126,15 @@ add_action('init', 'armoniamatutina_header');
 
 
 /* POST */
+function armoniamatutina_default_title($title) {
+    return 'Aquí va un título breve enfocado en aportar algo al lector';
+}
+add_filter('default_title', 'armoniamatutina_default_title');
+
 function armoniamatutina_default_content($content) {
     $default_content = '
-    <h2 class="wp-block-heading" id="ca34">Aquí va la leyenda del post</h2>
-    <em>Aquí va una introduccion que invite al lector a seguir leyendo y de una idea de lo que tratara el post.</em>
+    <h2 class="wp-block-heading">Aquí va una leyenda corta sobre el objetivo del post</h2>
+    <em>Aquí va una introducción que captará la atención del lector y le dará una idea clara de lo que tratará el post. Empieza destacando un problema o una situación común que enfrentan tus lectores, algo con lo que puedan identificarse fácilmente. Luego, ofrece una visión general de cómo tu post abordará ese problema, proporcionando una solución, consejo o perspectiva valiosa. Asegúrate de mantener el tono atractivo y relevante para que el lector se sienta motivado a seguir leyendo.</em>
     ';
     return $default_content . $content;
 }
