@@ -16,6 +16,7 @@ get_header();
             the_content();
             $content = ob_get_clean();
 
+            /* Mover de lugar el primer h2, agregado mediante default_content*/
             // Extraer el primer <h2> del contenido
             preg_match('/<h2.*?>.*?<\/h2>/i', $content, $matches);
             $first_h2 = isset($matches[0]) ? $matches[0] : '';

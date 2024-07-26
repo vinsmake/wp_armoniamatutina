@@ -126,9 +126,11 @@ add_action('init', 'armoniamatutina_header');
 
 
 /* POST */
-
 function armoniamatutina_default_content($content) {
-    $default_content = '<h2 class="wp-block-heading" id="ca34">contenido random</h2>';
+    $default_content = '
+    <h2 class="wp-block-heading" id="ca34">Aquí va la leyenda del post</h2>
+    <em>Aquí va una introduccion que invite al lector a seguir leyendo y de una idea de lo que tratara el post.</em>
+    ';
     return $default_content . $content;
 }
 add_filter('default_content', 'armoniamatutina_default_content');

@@ -335,10 +335,15 @@ body {
     }
 }
 
+.post__titulo,
+.post__cover,
+.post__content {
+    margin: 4rem auto auto auto;
+
+}
+
 .post__titulo {
     text-align: center;
-    margin: 4rem auto;
-
 }
 
 .post__titulo h1 {
@@ -369,5 +374,5 @@ body {
 }
 
 .post__content {
-    
+
 }
