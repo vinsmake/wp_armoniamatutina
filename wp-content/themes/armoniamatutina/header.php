@@ -31,10 +31,12 @@ $youtube = get_option('custom_youtube');
 <body class="body">
 
     <header class="header">
-        <div>
-            <h1 class="header__title"><?php if ($titulo) {
-                                            echo esc_html($titulo);
-                                        }; ?></h1>
+        <div class="header__title">
+            <a href="<?php echo site_url('/') ?>">
+                <h1><?php if ($titulo) {
+                        echo esc_html($titulo);
+                    }; ?></h1>
+            </a>
         </div>
 
 
