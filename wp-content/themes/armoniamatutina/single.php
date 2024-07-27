@@ -4,12 +4,19 @@ get_header();
 
 
 <section class="post">
-<div class="post__bookmark">
-    <div>Cultura</div>
-  </div>
+    <section class="post__bookmarks">
+        <div class="post__bookmark">
+            <div>Cultura</div>
+        </div>
+        <div class="post__bookmark">
+            <div>Arte</div>
+        </div>
+    </section>
+
+
     <div class="post__contenedor">
 
-    <section class="post__categorias">Estas leyendo sobre: <?php the_category(); ?></section>
+        <section class="post__categorias">Estas leyendo sobre: <?php the_category(); ?></section>
 
         <?php
         while (have_posts()) : the_post();
@@ -56,7 +63,7 @@ get_header();
     </div>
 
     <!-- Publisher data -->
-    <?php echo '<footer class="post__content__footer">';?>
+    <?php echo '<footer class="post__content__footer">'; ?>
     <span>Publicado por
         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>">
             <?php echo get_the_author_meta('display_name') ?>
@@ -68,9 +75,9 @@ get_header();
     </span>
 
 
-        
 
-    <?php echo '</footer>';?>
+
+    <?php echo '</footer>'; ?>
 
 </section>
 

@@ -325,35 +325,37 @@ main {
     position:relative;
 }
 
-/* $ribbon-bg: #bb3a34;
-$ribbon-hl: #e74841;
-$ribbon-w: 40px;
-$ribbon-tail: 10px;
- */
-.post__bookmark {
-    padding:0 0 10px 0;
-    position:absolute;
-    right:0.25em;
-    top:-0.25em;
-    width: 40px;
+.post__bookmarks {
+    padding:0 0 0 10px;
+    position: absolute;
+    right: -0.25em;
+    top:0.25em;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
+
 
 .post__bookmark div {
     background: #bb3a34;
-    background: linear-gradient(#e74841 0%, #bb3a34 100%);
+    background: #bb3a34;
     color:#fff;
-    padding:0.5em 0;
+    font-size: 24px;
+    padding: 0;
     text-align:center;
     text-shadow:-1px -1px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
   }
+
 .post__bookmark div::after {
-    border-left: 20px solid #bb3a34;
-    border-right: 20px solid #bb3a34;
-    border-bottom: 11px solid transparent;
+    border-top: 21px solid #bb3a34;
+    border-bottom: 21px solid #bb3a34;
+    border-left: 12px solid transparent;
     bottom:0;
     content:'';
     height: 0;
-    left:0;
+    left:-11px;
     position:absolute;
     width: 0;
   }
