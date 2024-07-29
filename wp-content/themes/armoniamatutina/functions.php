@@ -124,6 +124,20 @@ function armoniamatutina_header()
 }
 add_action('init', 'armoniamatutina_header');
 
+/* patterns */
+function armoniamatutina_register_block_patterns() {
+    register_block_pattern(
+        'armoniamatutina/pattern-blog',
+        array(
+            'title'       => __('Blog Grid', 'armoniamatutina'),
+            'description' => _x('A custom grid layout for blog posts', 'Block pattern description', 'armoniamatutina'),
+            'categories'  => array('text'),
+            'content'     => file_get_contents(get_template_directory() . '/patterns/pattern-blog.php'),
+        )
+    );
+}
+add_action('init', 'armoniamatutina_register_block_patterns');
+
 
 /* POST */
 function armoniamatutina_default_title($title) {
@@ -134,7 +148,7 @@ add_filter('default_title', 'armoniamatutina_default_title');
 function armoniamatutina_default_content($content) {
     $default_content = '
     <h2 class="wp-block-heading">Aquí va una leyenda corta sobre el objetivo del post</h2>
-    <em>Aquí va una introducción que captará la atención del lector y le dará una idea clara de lo que tratará el post. Empieza destacando un problema o una situación común que enfrentan tus lectores, algo con lo que puedan identificarse fácilmente. Luego, ofrece una visión general de cómo tu post abordará ese problema, proporcionando una solución, consejo o perspectiva valiosa. Asegúrate de mantener el tono atractivo y relevante para que el lector se sienta motivado a seguir leyendo.</em>
+    <em>Aquí va una introducción que captará la atención del lector y dando una idea de lo que tratará el post. Empieza destacando una situación de tus lectores con la que puedan identificarse, luego, ofrece una visión de cómo tu post abordará ese problema, proporcionando una solución o consejo. (Máximo 3 renglones).</em>
     ';
     return $default_content . $content;
 }

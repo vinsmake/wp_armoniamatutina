@@ -4,19 +4,7 @@ get_header();
 
 
 <section class="post">
-    <section class="post__bookmarks">
-        <div class="post__bookmark">
-            <div>Cultura</div>
-        </div>
-        <div class="post__bookmark">
-            <div>Arte</div>
-        </div>
-    </section>
-
-
     <div class="post__contenedor">
-
-        <section class="post__categorias">Estas leyendo sobre: <?php the_category(); ?></section>
 
         <?php
         while (have_posts()) : the_post();

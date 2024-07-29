@@ -155,8 +155,8 @@
     --c-text: #000000;
     --c-text-neg: #ffffff;
 
-    --c-action: #ff00ff;
-    --c-accent: #4AFD01;
+    --c-action: #b48760;
+    --c-accent: #A67C58;
     --c-detail: #565656;
     --c-effect: #cacaca;
 
@@ -322,43 +322,16 @@ main {
     border-radius: 8px;
     font-family: var(--ff-2);
     background: var(--c-background-light);
-    position:relative;
 }
 
 .post__bookmarks {
-    padding:0 0 0 10px;
     position: absolute;
-    right: -0.25em;
-    top:0.25em;
-    width: 200px;
+    right: -4px;
+    top: 4px;
+    width: 150px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
-
-
-.post__bookmark div {
-    background: #bb3a34;
-    background: #bb3a34;
-    color:#fff;
-    font-size: 24px;
-    padding: 0;
-    text-align:center;
-    text-shadow:-1px -1px 0 rgba(0, 0, 0, 0.5);
-    position: relative;
-  }
-
-.post__bookmark div::after {
-    border-top: 21px solid #bb3a34;
-    border-bottom: 21px solid #bb3a34;
-    border-left: 12px solid transparent;
-    bottom:0;
-    content:'';
-    height: 0;
-    left:-11px;
-    position:absolute;
-    width: 0;
-  }
 
 .post__contenedor {
     width: 100%;
@@ -379,15 +352,6 @@ main {
 .post__content ol li {
     margin: 4rem auto auto auto;
 
-}
-.post__categorias {
-    text-align: center;
-}
-.post__categorias ul{
-    display: inline;
-}
-.post__categorias ul li{
-    display: inline;
 }
 
 .post__titulo {
@@ -511,3 +475,73 @@ main {
     }
 }
 
+/* home.php */
+/* blog */
+
+.blog {
+    width: 100%;
+    height: auto;
+}
+
+.blog__polaroid {
+    margin: 2rem auto;
+    gap: 2rem;
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.blog__polaroid .blog__polaroid__card {
+    box-shadow: 0px 0px 10px 0px rgba(63, 58, 55, 1);
+    padding: 2rem;
+    background-color: var(--c-background-light);
+    font-family: var(--ff-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog__polaroid__card a img{
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.blog__polaroid__card a h3{
+    font-size: var(--fs-1);
+}
+.blog__polaroid__card a h2{
+    font-size: var(--fs-text);
+    color: var(--c-accent);
+    font-weight: var(--fw-b);
+}
+
+.blog__polaroid__card__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--c-detail);
+}
+
+.blog__polaroid__card__meta span {
+    display: block;
+}
+
+.blog__polaroid__card__meta ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.blog__polaroid__card__meta ul li{
+    color: var(--c-action);
+    padding: 0px 6px;
+}
+.blog__polaroid__card__meta ul li:hover{
+    background-color: var(--c-action);
+    color: var(--c-background-light);
+    border-radius: 2rem;
+    transition: background-color 0.7s;
+
+}
