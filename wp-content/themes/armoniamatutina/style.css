@@ -238,7 +238,7 @@ main {
     transition: background-color 0.7s;
 }
 
-.header__navbar .current_page_item {
+.header__navbar .current-menu-item {
     background-color: rgba(217 218 213 /20%);
     border-radius: 2rem;
 }

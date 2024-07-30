@@ -139,3 +139,7 @@ function armoniamatutina_default_content($content) {
     return $default_content . $content;
 }
 add_filter('default_content', 'armoniamatutina_default_content');
+
+/* CUSTOM QUERIES */
+require_once get_template_directory() . '/includes/queries.php';
+
