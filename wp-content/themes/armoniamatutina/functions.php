@@ -124,20 +124,6 @@ function armoniamatutina_header()
 }
 add_action('init', 'armoniamatutina_header');
 
-/* patterns */
-function armoniamatutina_register_block_patterns() {
-    register_block_pattern(
-        'armoniamatutina/pattern-blog',
-        array(
-            'title'       => __('Blog Grid', 'armoniamatutina'),
-            'description' => _x('A custom grid layout for blog posts', 'Block pattern description', 'armoniamatutina'),
-            'categories'  => array('text'),
-            'content'     => file_get_contents(get_template_directory() . '/patterns/pattern-blog.php'),
-        )
-    );
-}
-add_action('init', 'armoniamatutina_register_block_patterns');
-
 
 /* POST */
 function armoniamatutina_default_title($title) {
