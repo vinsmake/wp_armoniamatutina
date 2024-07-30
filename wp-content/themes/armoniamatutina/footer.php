@@ -10,7 +10,7 @@
     );
     wp_nav_menu($args);
     ?>
-    <p class="footer__copyright">Todos los derechos reservados. &copy; <?php echo date('Y') ?>, <a href="mailto:armoniamatutina@gmail.com">armoniamatutina@gmail.com</a></p>
+    <p class="footer__copyright">Todos los derechos reservados. &copy; <?php echo date('Y') ?>, <a href="armoniamatutina@gmail.com">armoniamatutina@gmail.com</a></p>
 </footer>
 
 <?php
