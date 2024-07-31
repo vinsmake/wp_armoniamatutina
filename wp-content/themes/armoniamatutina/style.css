@@ -293,7 +293,7 @@ main {
     font-weight: var(--fw-b);
 }
 
-/* Redes sociales */
+/* Redes sociales header */
 .header__hero__contenido__social {
     margin: 4rem auto 0rem auto;
 }
@@ -304,6 +304,7 @@ main {
     height: 6rem;
     margin: 0rem 1rem;
     padding: 6px;
+    fill: var(--c-text-neg);
 }
 
 .header__hero__contenido__social svg:hover {
@@ -632,4 +633,54 @@ main {
     border-radius: 2rem;
     transition: background-color 0.7s;
 
+}
+
+/* contacto */
+/* redes sociales contacto */
+.contacto__social {
+    margin: 4rem auto 0rem auto;
+}
+
+.contacto__social svg {
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    width: 6rem;
+    height: 6rem;
+    margin: 0rem 1rem;
+    padding: 6px;
+}
+
+.contacto__social svg:hover {
+    background-color: var(--c-background-dark);
+    border-radius: 25%;
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    transition: background-color 2s
+}
+
+.contacto__social .discord svg {
+    fill: #5865F2;
+}
+.contacto__social .facebook svg {
+    fill: #1877F2;
+}
+.contacto__social .instagram svg {
+    fill: #C837AB;
+}
+.contacto__social .linkedin svg {
+    fill: #006699;
+}
+.contacto__social .telegram svg {
+    fill: #37AEE2;
+}
+.contacto__social .tiktok svg {
+    fill: #000000;
+}
+.contacto__social .whatsapp svg {
+    fill: #57D163;
+}
+.contacto__social .x svg {
+    fill: #000000;
+}
+.contacto__social .youtube svg {
+    fill: #FF0000;
 }

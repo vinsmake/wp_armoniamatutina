@@ -1,21 +1,13 @@
-<!-- ADVANCED CUSTOM FIELDS IMPORT GLOBAL DATA -->
-<?php
+
+<?php 
+/* ADVANCED CUSTOM FIELDS IMPORT GLOBAL DATA */
 /* HERO DATA */
 $leyenda = get_option('custom_leyenda');
 $titulo = get_option('custom_titulo');
 $boton = get_option('custom_boton');
-/* SOCIALS */
-$discord = get_option('custom_discord');
-$facebook = get_option('custom_facebook');
-$instagram = get_option('custom_instagram');
-$linkedin = get_option('custom_linkedin');
-$telegram = get_option('custom_telegram');
-$tiktok = get_option('custom_tiktok');
-$whatsapp = get_option('custom_whatsapp');
-$x = get_option('custom_x');
-$youtube = get_option('custom_youtube');
 
 ?>
+
 
 
 
@@ -80,52 +72,11 @@ $youtube = get_option('custom_youtube');
 
                     ?>
                 </div>
-                <!-- Social media -->
-                <div class="header__hero__contenido__social">
-                    <?php
-                    /* Social media */
-                    function display_social_link($social, $svg_filename)
-                    {
-                        if ($social && $social['mostrar']) {
-                            $link = esc_url($social['link']);
-                            $svg_path = get_template_directory() . '/svg/' . $svg_filename;
+                <p class="header__hero__contenido__social">
+                    
+                <?php get_template_part('template-parts/template-social'); ?>
 
-                            if (file_exists($svg_path)) {
-                                $svg = file_get_contents($svg_path);
-                                echo '<a href="' . $link . '" target="_blank">' . $svg . '</a>';
-                            }
-                        }
-                    }
-
-                    // Discord
-                    display_social_link($discord, 'discord.svg');
-
-                    // Facebook
-                    display_social_link($facebook, 'facebook.svg');
-
-                    // Instagram
-                    display_social_link($instagram, 'instagram.svg');
-
-                    // LinkedIn
-                    display_social_link($linkedin, 'linkedin.svg');
-
-                    // Telegram
-                    display_social_link($telegram, 'telegram.svg');
-
-                    // TikTok
-                    display_social_link($tiktok, 'tiktok.svg');
-
-                    // WhatsApp
-                    display_social_link($whatsapp, 'whatsapp.svg');
-
-                    // X
-                    display_social_link($x, 'x.svg');
-
-                    // YouTube
-                    display_social_link($youtube, 'youtube.svg');
-                    ?>
-
-                </div>
+                </p>
             </div>
         </section>
     </header>

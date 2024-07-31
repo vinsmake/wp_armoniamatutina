@@ -126,12 +126,14 @@ add_action('init', 'armoniamatutina_header');
 
 
 /* POST */
-function armoniamatutina_default_title($title) {
+function armoniamatutina_default_title($title)
+{
     return 'Aquí va un título breve enfocado en aportar algo al lector';
 }
 add_filter('default_title', 'armoniamatutina_default_title');
 
-function armoniamatutina_default_content($content) {
+function armoniamatutina_default_content($content)
+{
     $default_content = '
     <h2 class="wp-block-heading">Aquí va una leyenda corta sobre el objetivo del post</h2>
     <em>Aquí va una introducción que captará la atención del lector y dando una idea de lo que tratará el post. Empieza destacando una situación de tus lectores con la que puedan identificarse, luego, ofrece una visión de cómo tu post abordará ese problema, proporcionando una solución o consejo. (Máximo 3 renglones).</em>
@@ -142,4 +144,21 @@ add_filter('default_content', 'armoniamatutina_default_content');
 
 /* CUSTOM QUERIES */
 require_once get_template_directory() . '/includes/queries.php';
+
+/* shortcodes */
+function armoniamatutina_map_shortcode()
+{
+    ob_start();
+    the_field('mapa');
+    return ob_get_clean();
+};
+add_shortcode('armoniamatutina_map', 'armoniamatutina_map_shortcode');
+
+function armoniamatutina_social_shortcode()
+{
+    ob_start();
+    get_template_part('template-parts/template-social');
+    return ob_get_clean();
+};
+add_shortcode('armoniamatutina_social', 'armoniamatutina_social_shortcode');
 

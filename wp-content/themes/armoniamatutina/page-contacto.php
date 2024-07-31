@@ -1,23 +1,31 @@
-<?php 
-    get_header();
+<?php
+get_header();
 ?>
-<h1>Page-contacto</h1>
+
+<section class="post">
+    <div class="post__contenedor">
+
+        <?php
+
+        while (have_posts()) : the_post();
+
+            echo '<section class="post__titulo">';
+            the_title('<h1>', '</h1>');
+
+            the_content();
+
+            echo '</section>';
+
+
+
+
+        endwhile;
+
+        ?>
+
+    </div>
+</section>
 
 <?php
-
-while( have_posts() ) : the_post();
-
-    the_title();
-
-    the_field('ubicacion');
-
-    the_content();
-
-
-endwhile;
-
-?>
-
-<?php 
-    get_footer();
+get_footer();
 ?>
