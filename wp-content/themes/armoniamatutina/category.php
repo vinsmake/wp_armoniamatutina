@@ -10,9 +10,11 @@ get_header();
 
 
 <?php 
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
             'category_name' => get_queried_object()->name,
-            'posts_per_page' => -1, // -1 para obtener todas las publicaciones
+            'paged' => $paged,
+            'posts_per_page' => get_option('posts_per_page'),
         );
 
         armoniamatutina_get_posts($args);
@@ -22,6 +24,9 @@ get_header();
 
 
     </section>
+    <?php 
+    the_posts_pagination();
+    ?>
 </section>
 <?php
 get_footer();

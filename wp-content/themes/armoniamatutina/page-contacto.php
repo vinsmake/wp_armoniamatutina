@@ -16,9 +16,6 @@ get_header();
 
             echo '</section>';
 
-
-
-
         endwhile;
 
         ?>
