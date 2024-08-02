@@ -1,4 +1,4 @@
-<?php 
+<?php
 function get_first_h2($content) {
     if (preg_match('/<h2.*?>(.*?)<\/h2>/', $content, $h2)) {
         return $h2[0];
@@ -14,9 +14,14 @@ function get_first_em($content) {
 }
 
 function armoniamatutina_get_posts($args) {
-    $query = new WP_Query($args);
-    if ($query->have_posts()) {
-        while ($query->have_posts()) : $query->the_post();
+    // Global $wp_query
+    global $wp_query;
+    
+    // Ejecuta una nueva query con los argumentos proporcionados
+    $wp_query = new WP_Query($args);
+    
+    if ($wp_query->have_posts()) {
+        while ($wp_query->have_posts()) : $wp_query->the_post();
             $content = get_the_content();
             $first_h2 = get_first_h2($content);
             $first_em_after_h2 = get_first_em($content);
@@ -41,7 +46,9 @@ function armoniamatutina_get_posts($args) {
                 </div>
             </li>
 
-        <?php endwhile;
+            <?php
+        endwhile;
+        // Restaura el objeto de la query global
         wp_reset_postdata();
     } else {
         echo '<p>No posts found.</p>';

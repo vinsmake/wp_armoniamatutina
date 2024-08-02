@@ -7,7 +7,7 @@ get_header();
         <?php
         while (have_posts()) : the_post();
 
-        echo '<h1>';
+            echo '<h1>';
             the_title();
             echo '</h1>';
 
@@ -21,17 +21,15 @@ get_header();
 
 <section class="blog">
     <h2>
-        <?php echo get_queried_object()->name; ?>
+        <?php echo get_queried_object()->post_name; ?>
     </h2>
     <section class="blog__polaroid">
 
 
         <?php
         /* obtiene el slug para usarlo como categoria */
-        if (is_page()) {
-            $page_slug = get_post_field('post_name', get_queried_object_id());
-            $category_name = $page_slug;
-        }
+        $page_slug = get_queried_object()->post_name;
+        $category_name = $page_slug;
 
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
@@ -40,15 +38,24 @@ get_header();
             'posts_per_page' => get_option('posts_per_page'),
         );
 
+        // Llama a tu función personalizada para obtener los posts
         armoniamatutina_get_posts($args);
+
+
         ?>
+
 
 
 
 
     </section>
     <?php
-    the_posts_pagination();
+    // Asegúrate de que la paginación se muestre
+    the_posts_pagination(array(
+        'mid_size'  => 2,
+        'prev_text' => __('« Previous', 'textdomain'),
+        'next_text' => __('Next »', 'textdomain'),
+    ));
     ?>
 
 
