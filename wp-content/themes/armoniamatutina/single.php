@@ -67,6 +67,7 @@ get_header();
 
     <?php echo '</footer>'; ?>
 
+    
 </section>
 
 <?php

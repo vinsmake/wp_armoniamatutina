@@ -453,6 +453,7 @@ main {
 
 .post__content p {
     margin-bottom: 1.75em;
+    text-align: justify;
 }
 
 .post__content h2, .post__content h1 {
@@ -569,10 +570,6 @@ main {
     padding: 0rem calc(var(--fs-1)/2);
 }
 
-
-
-
-
 .blog__polaroid {
     margin: 2rem auto;
     gap: 3rem;
@@ -601,6 +598,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: justify;
 }
 
 .blog__polaroid__card:hover {
@@ -654,6 +652,45 @@ main {
     border-radius: 2rem;
     transition: background-color 0.7s;
 
+}
+
+/* page */
+.page {
+
+    font-family: var(--ff-2);
+    width: 100%;
+}
+
+.page__contenedor {
+    width: 90%;
+    max-width: 140rem;
+    margin: auto;
+}
+
+.page h1 {
+    font-size: var(--fs-3);
+    text-align: center;
+}
+
+.page h2 {
+    font-size: var(--fs-2);
+    color: var(--c-accent);
+}
+
+.page p {
+    text-align: justify;
+}
+
+@media (max-width: 576px) {
+    .page h1 {
+        font-size: var(--fs-3);
+        text-align: center;
+    }
+
+    .page h2 {
+        font-size: var(--fs-1);
+        color: var(--c-accent);
+    }
 }
 
 /* contacto */

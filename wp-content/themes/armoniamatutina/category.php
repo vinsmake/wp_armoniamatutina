@@ -27,6 +27,8 @@ get_header();
     <?php 
     the_posts_pagination();
     ?>
+
+
 </section>
 <?php
 get_footer();
