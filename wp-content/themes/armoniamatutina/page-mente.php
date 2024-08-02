@@ -50,12 +50,7 @@ get_header();
 
     </section>
     <?php
-    // Asegúrate de que la paginación se muestre
-    the_posts_pagination(array(
-        'mid_size'  => 2,
-        'prev_text' => __('« Previous', 'textdomain'),
-        'next_text' => __('Next »', 'textdomain'),
-    ));
+    the_posts_pagination();
     ?>
 
 
