@@ -554,7 +554,7 @@ main {
 }
 
 /* blog pagination */
-.blog .blog__pagination ul {
+.blog .pagination ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -563,14 +563,14 @@ main {
     font-size: var(--fs-1);
 }
 
-.blog .blog__pagination .current {
+.blog .pagination .current {
     color: var(--c-text-neg);
     background-color: var(--c-action);
     border-radius: 100%;
     padding: 0rem calc(var(--fs-1)/2);
 }
 
-.blog__polaroid ul {
+.blog__polaroid .polaroid__list {
     margin: 2rem auto;
     gap: 3rem;
     display: grid;
@@ -579,18 +579,18 @@ main {
 }
 
 @media (max-width: 1280px) {
-    .blog__polaroid ul {
+    .blog__polaroid .polaroid__list {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    .blog__polaroid ul {
+    .blog__polaroid .polaroid__list {
         grid-template-columns: 1fr;
     }
 }
 
-.blog__polaroid__card {
+.polaroid__card {
     box-shadow: 0px 0px 10px 0px rgba(63, 58, 55, 1);
     padding: 4rem;
     background-color: var(--c-background-light);
@@ -601,30 +601,30 @@ main {
     text-align: justify;
 }
 
-.blog__polaroid__card:hover {
+.polaroid__card:hover {
     box-shadow: 0px 0px 25px 2px rgba(63, 58, 55, 1);
     transform: scale(1.01);
     transition: transform 0.5s;
     transition: box-shadow 0.7s
 }
 
-.blog__polaroid__card a img{
+.polaroid__card a img{
     height: 30rem;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
 }
-.blog__polaroid__card a h3{
+.polaroid__card a h3{
     font-size: var(--fs-1);
 }
-.blog__polaroid__card a h2{
+.polaroid__card a h2{
     font-size: var(--fs-text);
     color: var(--c-accent);
     font-weight: var(--fw-b);
     text-align: left;
 }
 
-.blog__polaroid__card__meta {
+.polaroid__card__meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -633,21 +633,21 @@ main {
     border-top: 1px solid var(--c-detail);
 }
 
-.blog__polaroid__card__meta span {
+.polaroid__card__meta span {
     display: block;
     width: 15rem;
 }
 
-.blog__polaroid__card__meta ul {
+.polaroid__card__meta ul {
     display: flex;
     gap: 1rem;
 }
 
-.blog__polaroid__card__meta ul li{
+.polaroid__card__meta ul li{
     color: var(--c-action);
     padding: 0px 6px;
 }
-.blog__polaroid__card__meta ul li:hover{
+.polaroid__card__meta ul li:hover{
     background-color: var(--c-action);
     color: var(--c-background-light);
     border-radius: 2rem;
@@ -698,6 +698,10 @@ main {
     width: 90%;
     max-width: 140rem;
     margin: auto;
+}
+
+.page__front .polaroid__list {
+    display: flex;
 }
 
 /* contacto */

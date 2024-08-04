@@ -12,7 +12,6 @@ get_header();
             echo '</h1>';
 
             the_content();
-
         endwhile;
 
         ?>
