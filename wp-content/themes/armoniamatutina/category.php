@@ -24,11 +24,6 @@ get_header();
 
 
     </section>
-    <?php 
-    the_posts_pagination();
-    ?>
-
-
 </section>
 <?php
 get_footer();

@@ -1,30 +1,30 @@
 <?php
-function get_first_h2($content) {
-    if (preg_match('/<h2.*?>(.*?)<\/h2>/', $content, $h2)) {
+function get_first_h2($data) {
+    if (preg_match('/<h2.*?>(.*?)<\/h2>/', $data, $h2)) {
         return $h2[0];
     }
     return '';
 }
 
-function get_first_em($content) {
-    if (preg_match('/<em.*?>(.*?)<\/em>/', $content, $em)) {
+function get_first_em($data) {
+    if (preg_match('/<em.*?>(.*?)<\/em>/', $data, $em)) {
         return $em[0];
     }
     return '';
 }
 
 function armoniamatutina_get_posts($args) {
-    // Global $wp_query
-    global $wp_query;
+
     
     // Ejecuta una nueva query con los argumentos proporcionados
-    $wp_query = new WP_Query($args);
+    $custom_query = new WP_query($args);
     
-    if ($wp_query->have_posts()) {
-        while ($wp_query->have_posts()) : $wp_query->the_post();
-            $content = get_the_content();
-            $first_h2 = get_first_h2($content);
-            $first_em_after_h2 = get_first_em($content);
+    if ($custom_query->have_posts()) {
+        echo '<ul>';
+        while ($custom_query->have_posts()) : $custom_query->the_post();
+            $data = get_the_content();
+            $first_h2 = get_first_h2($data);
+            $first_em_after_h2 = get_first_em($data);
             ?>
 
             <li class="blog__polaroid__card">
@@ -48,8 +48,25 @@ function armoniamatutina_get_posts($args) {
 
             <?php
         endwhile;
+        echo '</ul>';
         // Restaura el objeto de la query global
         wp_reset_postdata();
+
+        // Paginación personalizada
+        $big = 999999999; // Necesario para paginación
+        $pagination = paginate_links(array(
+            'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+            'format' => '?paged=%#%',
+            'current' => max(1, get_query_var('paged')),
+            'total' => $custom_query->max_num_pages,
+            'prev_text' => __('&laquo; Previous'),
+            'next_text' => __('Next &raquo;'),
+            'type' => 'list', // Usa una lista no ordenada para la paginación
+        ));
+
+        if ($pagination) {
+            echo '<nav class="blog__pagination">' . $pagination . '</nav>';
+        }
     } else {
         echo '<p>No posts found.</p>';
     }

@@ -162,3 +162,21 @@ function armoniamatutina_social_shortcode()
 };
 add_shortcode('armoniamatutina_social', 'armoniamatutina_social_shortcode');
 
+function armoniamatutina_query_shortcode($atts) {
+    // Obtener el valor de la variable
+    $category_name = $atts['category_name'];
+
+    // Configurar los argumentos de la consulta
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $args = array(
+        'category_name' => $category_name, // Utiliza el parámetro si se proporciona
+        'paged' => $paged,
+        'posts_per_page' => get_option('posts_per_page'),
+    );
+    ob_start();
+    armoniamatutina_get_posts($args);
+    $content = ob_get_clean();
+
+    return $content;
+}
+add_shortcode('armoniamatutina_query', 'armoniamatutina_query_shortcode');

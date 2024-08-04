@@ -2,18 +2,22 @@
 get_header();
 ?>
 
-<?php
+<section class="page">
+    <section class="page__front">
+        <?php
 
-while (have_posts()) : the_post();
+        while (have_posts()) : the_post();
+            echo '<h1>';
+            the_title();
+            echo '</h1>';
 
-    the_title();
+            the_content();
 
-    the_content();
+        endwhile;
 
-endwhile;
-
-?>
-
+        ?>
+    </section>
+</section>
 <?php
 get_footer();
 ?>

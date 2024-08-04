@@ -20,14 +20,10 @@
 
 
         <?php
-        /* obtiene el slug para usarlo como categoria */
-        $page_slug = get_queried_object()->post_name;
-        $category_name = $page_slug;
 
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
-            'category_name' => $category_name, // Utiliza el slug de la página como nombre de la categoría
-            'paged' => $paged,
+            'category_name' => get_queried_object()->post_name, // Utiliza el slug de la página como nombre de la categoría
+            'paged' => (get_query_var('paged')) ? get_query_var('paged') : 1,
             'posts_per_page' => get_option('posts_per_page'),
         );
 
@@ -37,14 +33,5 @@
 
         ?>
 
-
-
-
-
     </section>
-    <?php
-    the_posts_pagination();
-    ?>
-
-
 </section>
