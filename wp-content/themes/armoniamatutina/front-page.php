@@ -3,8 +3,7 @@ get_header();
 ?>
 
 <section class="page">
-    <section class="page__front">
-    <section class="polaroid__list">
+    <section class="banner__list">
         <?php
 
         while (have_posts()) : the_post();
@@ -16,7 +15,7 @@ get_header();
         endwhile;
 
         ?>
-        </section>
+
     </section>
 </section>
 <?php

@@ -3,8 +3,8 @@ get_header();
 ?>
 
 <section class="page">
-    <section class="page__front">
-        <section class="polaroid__list">
+
+    <section class="polaroid__list">
 
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -14,8 +14,8 @@ get_header();
         );
         armoniamatutina_get_category($args);
         ?>
+
     </section>
-</section>
 </section>
 <?php
 get_footer();

@@ -1,32 +1,35 @@
 <?php
-function get_first_h2($data) {
+function get_first_h2($data)
+{
     if (preg_match('/<h2.*?>(.*?)<\/h2>/', $data, $h2)) {
         return $h2[0];
     }
     return '';
 }
 
-function get_first_em($data) {
+function get_first_em($data)
+{
     if (preg_match('/<em.*?>(.*?)<\/em>/', $data, $em)) {
         return $em[0];
     }
     return '';
 }
 
-function armoniamatutina_get_category($args) {
+function armoniamatutina_get_category($args)
+{
 
     // Ejecuta una nueva query con los argumentos proporcionados
     $custom_query = new WP_query($args);
-    
+
     if ($custom_query->have_posts()) {
         echo '<ul>';
         while ($custom_query->have_posts()) : $custom_query->the_post();
             $data = get_the_content();
             $first_h2 = get_first_h2($data);
             $first_em_after_h2 = get_first_em($data);
-            ?>
+?>
 
-            <li class="polaroid__card">
+            <li class="card">
                 <a href="<?php the_permalink(); ?>">
                     <?php the_post_thumbnail('medium_large') ?>
                     <h3><?php the_title(); ?></h3>
@@ -39,13 +42,13 @@ function armoniamatutina_get_category($args) {
                         <?php endif; ?>
                     <?php endif; ?>
                 </a>
-                <div class="polaroid__card__meta">
+                <div class="card__meta">
                     <?php the_category(); ?>
                     <span><?php the_time(get_option('date_format')); ?></span>
                 </div>
             </li>
 
-            <?php
+<?php
         endwhile;
         echo '</ul>';
         // Restaura el objeto de la query global
