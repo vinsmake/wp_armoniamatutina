@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <section class="page">
-    <section class="banner__list">
+
         <?php
 
         while (have_posts()) : the_post();
@@ -16,7 +16,7 @@ get_header();
 
         ?>
 
-    </section>
+
 </section>
 <?php
 get_footer();
