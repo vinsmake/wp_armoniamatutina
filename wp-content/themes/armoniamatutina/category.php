@@ -2,24 +2,25 @@
 get_header();
 ?>
 
-<section class="blog">
+<section class="page">
+    <section class="page__front">
+
 <h2>
     <?php echo get_queried_object()->name; ?>
 </h2>
-    <section class="blog__polaroid">
 
 
+<section class="polaroid__list">
 <?php 
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
             'category_name' => get_queried_object()->name,
-            'paged' => $paged,
+            'paged' => $paged = (get_query_var('paged')) ? get_query_var('paged') : 1,
             'posts_per_page' => get_option('posts_per_page'),
         );
 
-        armoniamatutina_get_posts($args);
+        armoniamatutina_get_category($args);
 ?>
-
+</section>
 
 
 

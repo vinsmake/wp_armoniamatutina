@@ -2,8 +2,9 @@
 get_header();
 ?>
 
-<section class="blog">
-    <section class="blog__polaroid">
+<section class="page">
+    <section class="page__front">
+        <section class="polaroid__list">
 
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -11,12 +12,10 @@ get_header();
             'posts_per_page' => get_option('posts_per_page'),
             'paged' => $paged
         );
-        armoniamatutina_get_posts($args);
+        armoniamatutina_get_category($args);
         ?>
     </section>
-    <?php
-        the_posts_pagination();
-        ?>
+</section>
 </section>
 <?php
 get_footer();

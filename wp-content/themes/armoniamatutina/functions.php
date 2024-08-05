@@ -164,19 +164,17 @@ add_shortcode('armoniamatutina_social', 'armoniamatutina_social_shortcode');
 
 function armoniamatutina_query_shortcode($atts) {
     // Obtener el valor de la variable
-    $category_name = $atts['category_name'];
-
-    // Configurar los argumentos de la consulta
+    $category_name = isset($atts['category_name']) ? $atts['category_name'] : '';
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
     $args = array(
-        'category_name' => $category_name, // Utiliza el parámetro si se proporciona
+        'category_name' => $category_name,
         'paged' => $paged,
         'posts_per_page' => get_option('posts_per_page'),
     );
-    ob_start();
-    armoniamatutina_get_posts($args);
-    $content = ob_get_clean();
 
-    return $content;
+    ob_start();
+    armoniamatutina_get_category($args);
+    return ob_get_clean();
 }
 add_shortcode('armoniamatutina_query', 'armoniamatutina_query_shortcode');

@@ -13,14 +13,13 @@ function get_first_em($data) {
     return '';
 }
 
-function armoniamatutina_get_posts($args) {
+function armoniamatutina_get_category($args) {
 
-    
     // Ejecuta una nueva query con los argumentos proporcionados
     $custom_query = new WP_query($args);
     
     if ($custom_query->have_posts()) {
-        echo '<ul class="polaroid__list">';
+        echo '<ul>';
         while ($custom_query->have_posts()) : $custom_query->the_post();
             $data = get_the_content();
             $first_h2 = get_first_h2($data);

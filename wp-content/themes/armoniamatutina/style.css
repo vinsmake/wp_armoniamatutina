@@ -540,110 +540,6 @@ main {
     }
 }
 
-/* home.php */
-/* blog */
-
-.blog {
-    width: 100%;
-    height: auto;
-}
-
-.blog h2 {
-    text-align: center;
-    font-size: var(--fs-3);
-}
-
-/* blog pagination */
-.blog .pagination ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    color: var(--c-action);
-    font-size: var(--fs-1);
-}
-
-.blog .pagination .current {
-    color: var(--c-text-neg);
-    background-color: var(--c-action);
-    border-radius: 100%;
-    padding: 0rem calc(var(--fs-1)/2);
-}
-
-.blog__polaroid .polaroid__list {
-    margin: 2rem auto;
-    gap: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    justify-content: center; 
-}
-
-.polaroid__card {
-    box-shadow: 0px 0px 10px 0px rgba(63, 58, 55, 1);
-    padding: 4rem;
-    background-color: var(--c-background-light);
-    font-family: var(--ff-2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: justify;
-    width: 55rem;
-}
-
-.polaroid__card:hover {
-    box-shadow: 0px 0px 25px 2px rgba(63, 58, 55, 1);
-    transform: scale(1.01);
-    transition: transform 0.5s;
-    transition: box-shadow 0.7s
-}
-
-.polaroid__card a img{
-    height: 30rem;
-    width: 100%;
-    overflow: hidden;
-    object-fit: cover;
-}
-.polaroid__card a h3{
-    font-size: var(--fs-1);
-}
-.polaroid__card a h2{
-    font-size: var(--fs-text);
-    color: var(--c-accent);
-    font-weight: var(--fw-b);
-    text-align: left;
-}
-
-.polaroid__card__meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid var(--c-detail);
-}
-
-.polaroid__card__meta span {
-    display: block;
-    width: 15rem;
-}
-
-.polaroid__card__meta ul {
-    display: flex;
-    gap: 1rem;
-}
-
-.polaroid__card__meta ul li{
-    color: var(--c-action);
-    padding: 0px 6px;
-}
-.polaroid__card__meta ul li:hover{
-    background-color: var(--c-action);
-    color: var(--c-background-light);
-    border-radius: 2rem;
-    transition: background-color 0.7s;
-
-}
 
 /* page */
 .page {
@@ -683,6 +579,102 @@ main {
     }
 }
 
+/* pagination */
+.pagination ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    color: var(--c-action);
+    font-size: var(--fs-1);
+}
+
+.pagination .current {
+    color: var(--c-text-neg);
+    background-color: var(--c-action);
+    border-radius: 100%;
+    padding: 0rem calc(var(--fs-1)/2);
+}
+
+/* polaroid list */
+.polaroid__list ul {
+    margin: 2rem auto;
+    gap: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: center; 
+}
+
+/* polaroid list cards */
+.polaroid__list .polaroid__card {
+    box-shadow: 0px 0px 10px 0px rgba(63, 58, 55, 1);
+    padding: 4rem;
+    background-color: var(--c-background-light);
+    font-family: var(--ff-2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
+    width: 55rem;
+}
+
+.polaroid__list .polaroid__card:hover {
+    box-shadow: 0px 0px 25px 2px rgba(63, 58, 55, 1);
+    transform: scale(1.01);
+    transition: transform 0.5s;
+    transition: box-shadow 0.7s
+}
+
+.polaroid__list .polaroid__card a img{
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.polaroid__list .polaroid__card a h3{
+    font-size: var(--fs-1);
+}
+.polaroid__list .polaroid__card a h2{
+    font-size: var(--fs-text);
+    color: var(--c-accent);
+    font-weight: var(--fw-b);
+    text-align: left;
+}
+
+
+.polaroid__list .polaroid__card__meta {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--c-detail);
+}
+
+.polaroid__list .polaroid__card__meta span {
+    display: block;
+    width: 15rem;
+}
+
+.polaroid__list .polaroid__card__meta .post-categories {
+    gap: 1rem;
+    justify-content: left;
+
+}
+
+.polaroid__list .polaroid__card__meta ul li{
+    color: var(--c-action);
+    padding: 0px 6px;
+}
+.polaroid__list .polaroid__card__meta ul li:hover{
+    background-color: var(--c-action);
+    color: var(--c-background-light);
+    border-radius: 2rem;
+    transition: background-color 0.7s;
+
+}
+
+
 /* front page */
 .page__front {
     width: 100%;
@@ -690,13 +682,6 @@ main {
     text-align: center;
 }
 
-.page__front .polaroid__list {
-    margin: 2rem auto;
-    gap: 3rem;
-    display: flex;
-    width: 90%;
-    justify-content: center; 
-}
 
 /* contacto */
 /* redes sociales contacto */

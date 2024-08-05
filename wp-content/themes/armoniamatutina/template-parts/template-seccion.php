@@ -15,22 +15,20 @@
     </section>
 </section>
 
-<section class="blog">
-    <section class="blog__polaroid">
+<section class="page">
+    <section class="page__front">
+        <section class="polaroid__list">
+            <?php
 
+            $args = array(
+                'category_name' => get_queried_object()->post_name, // Utiliza el slug de la página como nombre de la categoría
+                'paged' => (get_query_var('paged')) ? get_query_var('paged') : 1,
+                'posts_per_page' => get_option('posts_per_page'),
+            );
 
-        <?php
-
-        $args = array(
-            'category_name' => get_queried_object()->post_name, // Utiliza el slug de la página como nombre de la categoría
-            'posts_per_page' => get_option('posts_per_page'),
-        );
-
-        // Llama a tu función personalizada para obtener los posts
-        armoniamatutina_get_posts($args);
-
-
-        ?>
-
+            // Llama a tu función personalizada para obtener los posts
+            armoniamatutina_get_category($args);
+            ?>
+        </section>
     </section>
 </section>
