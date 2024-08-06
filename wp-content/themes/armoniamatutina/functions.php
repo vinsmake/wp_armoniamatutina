@@ -163,21 +163,23 @@ function armoniamatutina_social_shortcode()
 add_shortcode('armoniamatutina_social', 'armoniamatutina_social_shortcode');
 
 function armoniamatutina_query_shortcode($atts) {
-    // Obtener el valor de la variable
+    // Obtener los valores de los atributos
     $category_name = isset($atts['category_name']) ? $atts['category_name'] : '';
     $container_class = isset($atts['container_class']) ? $atts['container_class'] : '';
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
+    $posts_per_page = isset($atts['posts_per_page']) ? intval($atts['posts_per_page']) : get_option('posts_per_page');
+    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+    
     $args = array(
         'category_name' => $category_name,
         'paged' => $paged,
-        'posts_per_page' => get_option('posts_per_page'),
+        'posts_per_page' => $posts_per_page,
     );
-
+    
     ob_start();
-    echo '<section class="' . $container_class . '">';
-    armoniamatutina_get_category($args);
+    echo '<section class="' . esc_attr($container_class) . '">';
+    armoniamatutina_get_category($args); // Usar el nombre correcto de la función
     echo '</section>';
     return ob_get_clean();
 }
 add_shortcode('armoniamatutina_query', 'armoniamatutina_query_shortcode');
+
