@@ -254,8 +254,21 @@ main {
         display: none;
     }
 
+    /* header navbar > mobile > sticky bar */
+    /* to remove title */
+    .header__title {
+        height: 32px;
+        visibility: hidden;
+    }
+    
+
     .header__navbar--mobile {
         display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
     
     .header__navbar--mobile .header__navbar__stick {
@@ -278,7 +291,7 @@ main {
         stroke: var(--c-background);
     }
 
-    
+    /* header navbar > mobile > side bar */
     .header__navbar--mobile .header__navbar {
         display: none;
 
@@ -309,6 +322,7 @@ main {
     position: relative;
     margin-bottom: 2.5rem;
     box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.75);
+    text-align: center;
 }
 
 .header__hero__contenido {

@@ -44,16 +44,18 @@ $boton = get_option('custom_boton');
         </section>
 
         <section class="header__navbar--mobile">
+            <!-- hamburguer sticky bar -->
             <div class="header__navbar__stick">
-                <div class="header__navbar__stick__title"><?php if ($titulo) {
+                <div class="header__navbar__stick__title"><a href="<?php echo site_url('/') ?>"><h1><?php if ($titulo) {
                         echo esc_html($titulo);
-                    }; ?></div>
-            
+                    }; ?></h1></a></div>
             <?php
             $svg_path = get_template_directory() . '/svg/' . 'hamburger.svg';
             $svg = file_get_contents($svg_path);
             echo '<div class="hamburger">' . $svg . '</div>'
             ?>
+
+            <!-- side navbar  -->
             </div>
             <?php
             $args = array(
