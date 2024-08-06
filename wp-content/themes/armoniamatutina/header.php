@@ -1,5 +1,4 @@
-
-<?php 
+<?php
 /* ADVANCED CUSTOM FIELDS IMPORT GLOBAL DATA */
 /* HERO DATA */
 $leyenda = get_option('custom_leyenda');
@@ -33,14 +32,38 @@ $boton = get_option('custom_boton');
 
 
 
-        <?php
-        $args = array(
-            'theme_location' => 'navbar',
-            'container' => 'nav',
-            'container_class' => 'header__navbar'
-        );
-        wp_nav_menu($args);
-        ?>
+        <section class="header__navbar--desktop">
+            <?php
+            $args = array(
+                'theme_location' => 'navbar',
+                'container' => 'nav',
+                'container_class' => 'header__navbar'
+            );
+            wp_nav_menu($args);
+            ?>
+        </section>
+
+        <section class="header__navbar--mobile">
+            <div class="header__navbar__stick">
+                <div class="header__navbar__stick__title"><?php if ($titulo) {
+                        echo esc_html($titulo);
+                    }; ?></div>
+            
+            <?php
+            $svg_path = get_template_directory() . '/svg/' . 'hamburger.svg';
+            $svg = file_get_contents($svg_path);
+            echo '<div class="hamburger">' . $svg . '</div>'
+            ?>
+            </div>
+            <?php
+            $args = array(
+                'theme_location' => 'navbar',
+                'container' => 'nav',
+                'container_class' => 'header__navbar'
+            );
+            wp_nav_menu($args);
+            ?>
+        </section>
 
         <section class="header__hero">
             <div class="header__hero__contenido">
@@ -73,8 +96,8 @@ $boton = get_option('custom_boton');
                     ?>
                 </div>
                 <p class="header__hero__contenido__social">
-                    
-                <?php get_template_part('template-parts/template-social'); ?>
+
+                    <?php get_template_part('template-parts/template-social'); ?>
 
                 </p>
             </div>
