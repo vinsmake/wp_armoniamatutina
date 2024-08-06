@@ -46,25 +46,39 @@ $boton = get_option('custom_boton');
         <section class="header__navbar--mobile">
             <!-- hamburguer sticky bar -->
             <div class="header__navbar__stick">
-                <div class="header__navbar__stick__title"><a href="<?php echo site_url('/') ?>"><h1><?php if ($titulo) {
-                        echo esc_html($titulo);
-                    }; ?></h1></a></div>
-            <?php
-            $svg_path = get_template_directory() . '/svg/' . 'hamburger.svg';
-            $svg = file_get_contents($svg_path);
-            echo '<div class="hamburger">' . $svg . '</div>'
-            ?>
+                <div class="header__navbar__stick__title"><a href="<?php echo site_url('/') ?>">
+                        <h1><?php if ($titulo) {
+                                echo esc_html($titulo);
+                            }; ?></h1>
+                    </a>
+                </div>
+                <?php
+                $svg_path = get_template_directory() . '/svg/' . 'hamburger.svg';
+                $svg = file_get_contents($svg_path);
+                echo '<div class="hamburger">' . $svg . '</div>'
+                ?>
+            </div>
+
 
             <!-- side navbar  -->
+            <div class="header__navbar__active">
+                <?php
+                $args = array(
+                    'theme_location' => 'navbar',
+                    'container' => 'nav',
+                    'container_class' => 'header__navbar'
+                );
+                wp_nav_menu($args);
+                ?>
+                
+                <footer class="header__navbar__footer">
+                    <h1 class="header__navbar__footer__title"><a href="<?php echo site_url('/') ?>"><?php echo get_bloginfo('name') ?></a></h1>
+                    <p class="header__navbar__footer__copyright">Todos los derechos reservados. &copy; <?php echo date('Y') ?>, <a href="<?php echo site_url('/contacto/'); ?>">contacto</a></p>
+                    <div class="header__navbar__footer__social">
+                    <?php get_template_part('template-parts/template-social'); ?>
+                </div>
+                </footer>
             </div>
-            <?php
-            $args = array(
-                'theme_location' => 'navbar',
-                'container' => 'nav',
-                'container_class' => 'header__navbar'
-            );
-            wp_nav_menu($args);
-            ?>
         </section>
 
         <section class="header__hero">
