@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<section class="page">
+<section class="page front__page">
 
         <?php
 

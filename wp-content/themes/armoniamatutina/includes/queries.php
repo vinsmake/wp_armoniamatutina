@@ -15,13 +15,14 @@ function get_first_em($data)
     return '';
 }
 
-function armoniamatutina_get_category($args)
+function armoniamatutina_get_category($args, $container_class = '')
 {
 
     // Ejecuta una nueva query con los argumentos proporcionados
     $custom_query = new WP_query($args);
 
     if ($custom_query->have_posts()) {
+        echo '<div class="' . esc_attr($container_class) . '">';
         echo '<ul>';
         while ($custom_query->have_posts()) : $custom_query->the_post();
             $data = get_the_content();
@@ -53,6 +54,7 @@ function armoniamatutina_get_category($args)
 <?php
         endwhile;
         echo '</ul>';
+        echo '</div>';
         // Restaura el objeto de la query global
         wp_reset_postdata();
 
