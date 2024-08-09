@@ -53,7 +53,7 @@ $boton = get_option('custom_boton');
                     </a>
                 </div>
                 <?php
-                $svg_path = get_template_directory() . '/svg/' . 'hamburger.svg';
+                $svg_path = get_template_directory() . '/svg/' . 'close.svg';
                 $svg = file_get_contents($svg_path);
                 echo '<div class="hamburger">' . $svg . '</div>'
                 ?>

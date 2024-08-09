@@ -257,8 +257,7 @@ main {
     /* header navbar > mobile > sticky bar */
     /* to remove title */
     .header__title {
-        height: 32px;
-        visibility: hidden;
+        height: 64px;
     }
 
 
