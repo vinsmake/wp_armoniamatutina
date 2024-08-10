@@ -162,9 +162,6 @@
     --c-detail: #565656;
     --c-effect: #cacaca;
 
-
-
-
 }
 
 /*-----------------------------------*\
@@ -188,6 +185,10 @@ body {
     line-height: 1.25;
 }
 
+main {
+    line-height: 1.75;
+}
+
 /*-----------------------------------*\
             CUSTOM VARIABLE
   Here you can put all your custom
@@ -195,11 +196,6 @@ body {
   need it. DON'T forget to change
   your mediaqueries if necesary
 \*-----------------------------------*/
-
-/* main */
-main {
-    line-height: 1.75;
-}
 
 /* HEADER */
 /* header title */
